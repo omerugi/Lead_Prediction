@@ -4,12 +4,19 @@
 nan_replacment = "Missing" # Placeholder for nan values
 IS_TEST_MODE = True # If true - the nb would show all the plots and tests when developing.
 
-'''<< Models Path Vars >>'''
+'''<< Datasets Path Vars >>'''
+data_file_prefix = "data_sets/"
 data_file_name = "Marketing_Leads_India(1).csv"
+data_step_1 = "step1pp.csv"
+data_step_2 = "step2pp.csv"
+data_step_3 = "step3pp.csv"
+
+'''<< Models Path Vars >>'''
+models_path_prefix = "models/"
 imputer_model_path = "knnimputer_model.pkl"
 pca_model_path = "pca_model.pkl"
-ohe_path_postfix = "ohe_models/"
-ohe_path_prefix = "_ohe.pkl"
+ohe_path_prefix = "ohe_models/"
+ohe_path_postfix = "_ohe.pkl"
 onehot_models_dict = {
     "Lead Origin":"leadrigin_ohe.pkl",
     "Lead Source":"leadsource_ohe.pkl" ,

@@ -1,6 +1,10 @@
-'''<<< Model Vars >>>'''
-IS_TEST_MODE = True
-nan_replacment = "Missing"
+'''<<< Lead Prediction Vars >>>'''
+
+'''<< General Vars >>'''
+nan_replacment = "Missing" # Placeholder for nan values
+IS_TEST_MODE = True # If true - the nb would show all the plots and tests when developing.
+
+'''<< Models Path Vars >>'''
 data_file_name = "Marketing_Leads_India(1).csv"
 imputer_model_path = "knnimputer_model.pkl"
 pca_model_path = "pca_model.pkl"
@@ -16,7 +20,9 @@ onehot_models_dict = {
     "Lead Profile":"leadprofile_ohe.pkl",
     "Last Notable Activity": "lastnotableactivity_ohe.pkl"   
 }
+lr_model_path = "lr_model.pkl"
 
+'''<< Lead Source Vars >>'''
 lead_source_option = {
     "Google",
     "Direct Traffic",
@@ -26,10 +32,13 @@ lead_source_option = {
     "Welingak Website",
     "Referral Sites",
     "Other",
+    "Facebook"
 }
 def_lead_source_value = "Other"
 lead_source_threshold = 51
 
+
+'''<< "How did you hear.." Vars >>'''
 features_with_nan_map_to_other = [
     "How did you hear about X Education",
     "What matters most to you in choosing a course",
@@ -45,6 +54,7 @@ mappping_values = {
     'Page Views Per Visit': 2}
 # TotalVisits,Page Views Per Visit == The rounded mean value of the columns.
 
+'''<< Featuers Mod Vars (new,merge,drop..) >>'''
 new_featuers_lst = [
     'Other',
     'Multiple Sources',
@@ -71,6 +81,8 @@ featuers_to_drop = [
     "Update me on Supply Chain Content",
     "Get updates on DM Content",
     "I agree to pay the amount through cheque"]
+
+'''<< One Hot Encoding Vars >>'''
 one_hot_lst = [
     "Lead Origin",
     "Lead Source",
@@ -80,6 +92,8 @@ one_hot_lst = [
     "What matters most to you in choosing a course",
     "Lead Profile",
     "Last Notable Activity"]
+
+'''<< Asymmetrique Features Vars >>'''
 asymmetrique_activity_median = {
     2.0  :  14.0,
     3.0  :  16.0,

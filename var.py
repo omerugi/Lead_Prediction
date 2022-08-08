@@ -3,6 +3,33 @@ IS_TEST_MODE = True
 nan_replacment = "Missing"
 data_file_name = "Marketing_Leads_India(1).csv"
 imputer_model_path = "knnimputer_model.pkl"
+pca_model_path = "pca_model.pkl"
+ohe_path_postfix = "ohe_models/"
+ohe_path_prefix = "_ohe.pkl"
+onehot_models_dict = {
+    "Lead Origin":"leadrigin_ohe.pkl",
+    "Lead Source":"leadsource_ohe.pkl" ,
+    "Country":"country_ohe.pkl",
+    "Specialization": "specialization_ohe.pkl",
+    "What is your current occupation":"whatisyourcurrentoccupation_ohe.pkl",
+    "What matters most to you in choosing a course":"whatmattersmosttoyouinchoosingacourse_ohe.pkl",
+    "Lead Profile":"leadprofile_ohe.pkl",
+    "Last Notable Activity": "lastnotableactivity_ohe.pkl"   
+}
+
+lead_source_option = {
+    "Google",
+    "Direct Traffic",
+    "Olark Chat",
+    "Organic Search",
+    "Reference",
+    "Welingak Website",
+    "Referral Sites",
+    "Other",
+}
+def_lead_source_value = "Other"
+lead_source_threshold = 51
+
 features_with_nan_map_to_other = [
     "How did you hear about X Education",
     "What matters most to you in choosing a course",
@@ -16,7 +43,7 @@ mappping_values = {
     'City': 'Other Cities',
     'TotalVisits': 3,
     'Page Views Per Visit': 2}
-# TotalVisits,Page Views Per Visit == The mean value of the columns.
+# TotalVisits,Page Views Per Visit == The rounded mean value of the columns.
 
 new_featuers_lst = [
     'Other',

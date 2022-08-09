@@ -10,6 +10,8 @@ This class will do all the data processing and the predictions.
 It will the connection both to the DB, the preprocessing, and to the model.
 A data layer between the API and the functionality. 
 '''
+
+
 class lead_repo():
 
     def __init__(self, df):
@@ -25,9 +27,8 @@ class lead_repo():
                 dict_to_df[feature] = df[feature]
             except Exception as e:
                 if feature not in data_features_can_nan: raise e
-                # dict_to_df[feature] = nan
         dict_to_df.drop("Converted", axis=1)
-        self.df = dict_to_df
+        self.df = df
         self.pred = {}
         self.did_preproc = False
         self.lead_id = self.df["Lead Number"]
@@ -104,9 +105,9 @@ class lead_repo():
         :param db: db session
         '''
         will_convert = will_convert_prod_lr_model(self.df)
-        for i,id in enumerate(self.lead_id.unique()):
+        for i, id in enumerate(self.lead_id.unique()):
             self.pred[int(id)] = will_convert[i]
-            new_lead = Lead(lead_id=int(id),prob_convert = will_convert[i])
+            new_lead = Lead(lead_id=int(id), prob_convert=will_convert[i])
             db.add(new_lead)
         db.commit()
         return self
@@ -116,3 +117,6 @@ class lead_repo():
         Return a dict to send as a response to the user.
         '''
         return self.pred
+
+    def get_all_ids(self, db: Session):
+        return [id[0] for id in db.query(Lead.lead_id).all()]

@@ -17,7 +17,7 @@ async def predict_new_df_sample(request: Request, db: Session = Depends(get_db))
     '''
     Post method to predict if the samples will converge + save results to the DB
     :param request:
-    :param db: 
+    :param db:
     :return:
     '''
     try:

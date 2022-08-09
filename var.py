@@ -2,7 +2,7 @@
 
 '''<< General Vars >>'''
 nan_replacment = "Missing" # Placeholder for nan values
-IS_TEST_MODE = True # If true - the nb would show all the plots and tests when developing.
+IS_TEST_MODE = False # If true - the nb would show all the plots and tests when developing.
 
 '''<< Datasets Path Vars >>'''
 data_file_prefix = "data_sets/"
@@ -28,6 +28,24 @@ onehot_models_dict = {
     "Last Notable Activity": "lastnotableactivity_ohe.pkl"   
 }
 lr_model_path = "lr_model.pkl"
+
+'''<< Data Fetures >>'''
+data_features = ['Lead Number', 'Lead Origin', 'Lead Source', 'Do Not Email',
+       'Do Not Call', 'Converted', 'TotalVisits',
+       'Total Time Spent on Website', 'Page Views Per Visit', 'Last Activity',
+       'Country', 'Specialization', 'How did you hear about X Education',
+       'What is your current occupation',
+       'What matters most to you in choosing a course', 'Search', 'Magazine',
+       'Newspaper Article', 'X Education Forums', 'Newspaper',
+       'Digital Advertisement', 'Through Recommendations',
+       'Receive More Updates About Our Courses', 'Tags', 'Lead Quality',
+       'Update me on Supply Chain Content', 'Get updates on DM Content',
+       'Lead Profile', 'City', 'Asymmetrique Activity Index',
+       'Asymmetrique Profile Index', 'Asymmetrique Activity Score',
+       'Asymmetrique Profile Score',
+       'I agree to pay the amount through cheque',
+       'A free copy of Mastering The Interview', 'Last Notable Activity']
+data_features_can_nan = {'Converted','Lead Source', 'TotalVisits', 'Page Views Per Visit', 'Last Activity', 'How did you hear about X Education', 'What matters most to you in choosing a course', 'Lead Profile', 'City', 'Asymmetrique Activity Index', 'Asymmetrique Profile Index', 'Asymmetrique Activity Score', 'Asymmetrique Profile Score'}
 
 '''<< Lead Source Vars >>'''
 lead_source_option = {

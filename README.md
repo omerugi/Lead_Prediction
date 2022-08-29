@@ -1,9 +1,18 @@
 # Lead_Prediction
+![leads1](https://user-images.githubusercontent.com/57361655/187251593-3ab4c36d-5c7c-4c52-9325-7d28f75eed80.jpg)
+
+Created by: Omer Rugi - [Email](mailto:omerihay@gmail.com) - [Linkedin](https://www.linkedin.com/in/omerugi/)
+
+## The problem:
+The major part of telemarketing leads!
+Leads are potential customers that the telemarketer tries and convince to buy.
+But calling each lead takes a lot of time and many of those called end up with no sale.
+To try and solve it, I've implemented a lead predictor! it takes the information of the lead and returns a probability of how likely this lead will be converted to a sell.
+
+I've  worked on the data of a telemarketing agency in India and based on the information they provied try and predict. 
+
 
 ## The process:
-
-## Plot Data:
-- [x] Plot basic data on the features.
 
 ## Modify Features:
 ### First step - Replace NaN values and Encode features:

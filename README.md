@@ -11,6 +11,11 @@ To try and solve it, I've implemented a lead predictor! it takes the information
 
 I've  worked on the data of a telemarketing agency in India and based on the information they provied try and predict. 
 
+## Data:
+* Smples - 9240.
+* Featuers - 36.
+* Featuers with missing data - 12.
+* Featuers with non-numeric data - 14.
 
 ## The process:
 

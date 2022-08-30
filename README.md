@@ -36,7 +36,7 @@ The web server is based on FastAPI, and the DB using postgres.
 * Featuers with missing data - 12.
 * Featuers with non-numeric data - 14.
 
-## Problems and solulotions:
+## Issues and solutions:
 
 * Missing values - there where a lot of missing values in several featuers, and I used few ideas to overcome this problem.
     * Use default value - Some featuers had "default value" (like - "Other"), so in does cases I've replaced the missing value with the "default value".

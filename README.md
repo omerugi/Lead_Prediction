@@ -2,6 +2,8 @@
 ![leads1](https://user-images.githubusercontent.com/57361655/187251593-3ab4c36d-5c7c-4c52-9325-7d28f75eed80.jpg)
 
 Created by: Omer Rugi - [Email](mailto:omerihay@gmail.com) - [Linkedin](https://www.linkedin.com/in/omerugi/)
+## The main idea:
+The idea behind this project is to overcome dirty and diffecult dataset, the one I'm using contains several non-numeric categories, a lot of missing values, and useless featues.
 
 ## The problem:
 The major part of telemarketing leads!
@@ -11,11 +13,45 @@ To try and solve it, I've implemented a lead predictor! it takes the information
 
 I've  worked on the data of a telemarketing agency in India and based on the information they provied try and predict. 
 
+## General idea:
+The general idea is to create a datea processing pipline (made of 3 steps) + a model, that will process the data and new data. while also pretrain and save models for fastter responses.
+Afther cerating the pipline there is a web server that recives samples of new leads, and return the probabilty of them converting + keep that prediction on a DB.
+The web server is based on FastAPI, and the DB using postgres.
+
+## The project structuer:
+`LeadPrediction.ipynb` - the notebook with all the plots + pipline + models.
+`var.py` - contains all the varibles that cannot change and are used in the pipline.
+`main_rout.py` - web server API.
+`models` - folder that keeps all the pre trained models used in the pipline (OneHot, KNNImp, LR).
+`data_sets` - folder that keep the original dataset + a dataset after each step in the pipline (there are 3 steps).
+`database` - connection to the data base + the models of the tables.
+`repos` - the data layer with all the functinalitys to process new samples.
+
 ## Data:
 * Smples - 9240.
 * Featuers - 36.
 * Featuers with missing data - 12.
 * Featuers with non-numeric data - 14.
+
+## Problems and solulotions:
+
+* Missing values - there where a lot of missing values in several featuers, and I used few ideas to overcome this problem.
+    * Use default value - Some featuers had "default value" (like - "Other"), so in does cases I've replaced the missing value with the "default value".
+    * Mean values - in featuers with numerice values like counters, I've used the mean of the featuer.
+    * KNN Imputer - some featuers represented the score of the lead, important featuers, so using KNN Imputer I've filled in the missing values.
+
+* Featuers noise - some featuers where noise that will be useless to the model, so I had to clean them in several ways.
+    * All "no" featuers - they seem useless so they were removed.
+    * Small amount of samples - some featues had categories in them with very few samples, so I've used a threshold to make thoes into "default value".
+    * Duplicated featuers - featuers with the same "idea" behind them were merged.
+    * Splitting featuers - one featuer had few categories that were similar to other featuers, so I needed to split and merge.
+    * Typo - fixed typo in featuers so the categories are similar.
+
+* Non numeric featuers - many featuers had categories in them, or some rank, so they had to be Encoded properly.
+    * Categories - used OneHot Encoding.
+    * Rank - replace the "words" to ranking in numbers.
+
+
 
 ## The process:
 
@@ -35,8 +71,8 @@ I've  worked on the data of a telemarketing agency in India and based on the inf
 - [x] Lead Profile - Missing to Other Leads
 - [x] City - Missing to Other Cities.
 
-- [x] TotalVisits - Missing to Mean (Or use model)
-- [x] Page Views Per Visit - Missing to Mean (Or use model)
+- [x] TotalVisits - Missing to Mean.
+- [x] Page Views Per Visit - Missing to Mean.
 - [x] Create Featuers:
     - Other
     - Multiple Sources

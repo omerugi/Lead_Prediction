@@ -2,6 +2,9 @@
 ![leads1](https://user-images.githubusercontent.com/57361655/187251593-3ab4c36d-5c7c-4c52-9325-7d28f75eed80.jpg)
 
 Created by: Omer Rugi - [Email](mailto:omerihay@gmail.com) - [Linkedin](https://www.linkedin.com/in/omerugi/)
+
+[![My Skills](https://skillicons.dev/icons?i=python,fastapi,postgres)](https://skillicons.dev)
+
 ## What I wanted to get from this project:
 The idea behind this project is to overcome dirty and diffecult dataset, the one I'm using contains several non-numeric categories, a lot of missing values, and useless featues.
 

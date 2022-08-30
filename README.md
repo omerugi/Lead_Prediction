@@ -19,7 +19,6 @@ I've  worked on the data of a telemarketing agency in India and based on the inf
 
 ## The process:
 
-## Modify Features:
 ### First step - Replace NaN values and Encode features:
 - [x] NaN to missing
 - [x] Boolean to 0,1
